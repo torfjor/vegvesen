@@ -24,8 +24,8 @@ func New(httpClient *http.Client) *Client {
 	}
 }
 
-func (c *Client) VehicleData(ctx context.Context, licensePlate string) (VehicleData, error) {
-	req, err := c.newRequest(ctx, http.MethodGet, fmt.Sprintf("%s/%s", c.basePath, licensePlate))
+func (c *Client) VehicleData(ctx context.Context, registrationNumber string) (VehicleData, error) {
+	req, err := c.newRequest(ctx, http.MethodGet, fmt.Sprintf("%s/%s", c.basePath, registrationNumber))
 	if err != nil {
 		return VehicleData{}, err
 	}
